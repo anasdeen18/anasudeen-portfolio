@@ -1,0 +1,79 @@
+.education {
+  padding: 80px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.education-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.education-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.education-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding: 24px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color 0.25s ease;
+}
+
+.edu-row.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.edu-row:hover {
+  border-color: rgba(79, 240, 255, 0.3);
+}
+
+.edu-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  padding-top: 2px;
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-institution {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .edu-row {
+    grid-template-columns: 1fr;
+  }
+}

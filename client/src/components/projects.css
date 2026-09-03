@@ -1,0 +1,127 @@
+.projects {
+  padding: 80px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.projects-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.projects-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.projects-status {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-dim);
+  padding: 20px 0;
+}
+
+.project-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+}
+
+.project-card:hover {
+  border-color: rgba(79, 240, 255, 0.4);
+  box-shadow: 0 0 30px rgba(79, 240, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.project-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #04060c;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.project-tagline {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+
+.project-desc {
+  color: var(--text-dim);
+  font-size: 14.5px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 5px 12px;
+  border-radius: 6px;
+}

@@ -24,7 +24,7 @@ function AdminDashboard() {
   }, [token, navigate]);
 
   const fetchProjects = () => {
-    fetch('http://localhost:5000/api/projects')
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.log('Error fetching projects:', err));
@@ -51,7 +51,7 @@ function AdminDashboard() {
     if (!confirmed) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -97,7 +97,7 @@ function AdminDashboard() {
     try {
       let res;
       if (editingId) {
-        res = await fetch(`http://localhost:5000/api/projects/${editingId}`, {
+        res = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${editingId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function AdminDashboard() {
           body: JSON.stringify(projectData)
         });
       } else {
-        res = await fetch('http://localhost:5000/api/projects', {
+        res = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
